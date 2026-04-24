@@ -77,10 +77,10 @@ export default function Analyzer() {
                 <Code2 className="w-4 h-4" />
                 <span>input.txt</span>
               </div>
-              <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity">
-                <div className="w-3 h-3 rounded-full bg-white/20" />
-                <div className="w-3 h-3 rounded-full bg-white/20" />
-                <div className="w-3 h-3 rounded-full bg-white/20" />
+              <div className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+                <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_5px_rgba(234,179,8,0.5)]" />
+                <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_5px_rgba(34,197,94,0.5)]" />
               </div>
             </div>
 
