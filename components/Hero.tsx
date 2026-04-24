@@ -14,14 +14,14 @@ export default function Hero() {
           className="flex flex-col items-start"
         >
           <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full glass">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]" />
             <span className="text-xs font-mono uppercase tracking-widest text-gray-300 font-bold">Sub-3 Second Engine</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
             Decode.<br/>
             Detect.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Visualize.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">Visualize.</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-light">
@@ -58,7 +58,7 @@ export default function Hero() {
               <line key={`v-${i}`} x1={i * 40} y1="0" x2={i * 40} y2="400" strokeDasharray="4 4" />
             ))}
             {/* Architectural Nodes */}
-            <circle cx="120" cy="120" r="4" className="fill-accent stroke-none animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.8))' }} />
+            <circle cx="120" cy="120" r="4" className="fill-accent stroke-none animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(239,68,68,0.8))' }} />
             <circle cx="280" cy="200" r="4" className="fill-white stroke-none" />
             <circle cx="160" cy="320" r="4" className="fill-white stroke-none" />
             

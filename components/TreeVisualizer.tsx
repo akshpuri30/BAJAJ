@@ -28,7 +28,7 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
         
         <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border text-sm font-bold transition-all ${
           level === 0 
-            ? 'bg-accent/20 text-accent border-accent/40 shadow-[0_0_10px_rgba(59,130,246,0.2)]' 
+            ? 'bg-accent/20 text-accent border-accent/40 shadow-[0_0_10px_rgba(239,68,68,0.2)]' 
             : hasCycle && !hasChildren
               ? 'bg-warning/20 border-warning/40 text-warning shadow-[0_0_10px_rgba(245,158,11,0.2)]'
               : 'bg-white/5 border-white/10 text-gray-200 hover:border-white/20'

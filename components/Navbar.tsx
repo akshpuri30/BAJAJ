@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className="w-full py-4 mt-4 px-6 rounded-2xl glass flex items-center justify-between sticky top-4 z-50">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-accent shadow-[0_0_15px_rgba(59,130,246,0.5)] flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg bg-accent shadow-[0_0_15px_rgba(239,68,68,0.5)] flex items-center justify-center">
           <Network className="w-4 h-4 text-white" />
         </div>
         <div className="font-bold tracking-tight text-lg text-white">

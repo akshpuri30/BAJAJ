@@ -17,7 +17,7 @@ const config: Config = {
         surface: "#111111", // Dark gray surface
         primary: "#FFFFFF", // White text
         secondary: "#262626", // Dark border
-        accent: "#3b82f6", // Electric blue
+        accent: "#ef4444", // Vivid red
         success: "#10b981",
         warning: "#f59e0b",
         danger: "#ef4444",
@@ -38,8 +38,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.6)' },
+          '0%': { boxShadow: '0 0 5px rgba(239, 68, 68, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.6)' },
         }
       }
     },

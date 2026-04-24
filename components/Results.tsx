@@ -44,7 +44,7 @@ export default function Results({ data }: { data: ApiResponse }) {
             <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Total Trees</p>
             <p className="text-4xl font-extrabold text-white">{data.stats.total_trees}</p>
           </div>
-          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform border border-white/10 group-hover:border-accent/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform border border-white/10 group-hover:border-accent/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]">
             <Network className="text-accent w-5 h-5" />
           </div>
         </motion.div>
@@ -65,7 +65,7 @@ export default function Results({ data }: { data: ApiResponse }) {
               <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Deepest Root</p>
               <div className="flex items-center gap-2">
                 <p className="text-3xl font-extrabold text-white">{data.stats.largest_tree_root}</p>
-                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-accent/20 text-accent border border-accent/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]">Winner</span>
+                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-accent/20 text-accent border border-accent/30 shadow-[0_0_10px_rgba(239,68,68,0.2)]">Winner</span>
               </div>
             </div>
           </motion.div>

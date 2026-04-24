@@ -161,9 +161,9 @@ export default function Analyzer() {
             <div className="h-full w-full rounded-2xl border border-white/10 border-dashed flex flex-col items-center justify-center text-gray-500 glass min-h-[500px]">
               <div className="relative w-16 h-16 mb-6">
                 <div className="absolute inset-0 border-2 border-white/10 rounded-full animate-[spin_4s_linear_infinite]" />
-                <div className="absolute inset-2 border-2 border-accent/50 rounded-full animate-[spin_3s_linear_infinite_reverse] shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
+                <div className="absolute inset-2 border-2 border-accent/50 rounded-full animate-[spin_3s_linear_infinite_reverse] shadow-[0_0_15px_rgba(239,68,68,0.3)]" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(59,130,246,1)] animate-pulse" />
+                  <div className="w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(239,68,68,1)] animate-pulse" />
                 </div>
               </div>
               <p className="font-mono text-sm uppercase tracking-widest text-gray-400 font-bold">Awaiting Input</p>
