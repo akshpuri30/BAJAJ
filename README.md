@@ -7,9 +7,9 @@ This application features a highly performant hierarchical data analysis engine 
 
 The goal of this project is to analyze directed edges, construct trees, detect cycles, and summarize graph structures.
 
-**Frontend URL**: [https://srm-challenge-app.vercel.app](https://srm-challenge-app.vercel.app)
-**Backend API Base URL**: [https://srm-challenge-app.vercel.app](https://srm-challenge-app.vercel.app)
-**Endpoint Evaluator Tests**: [https://srm-challenge-app.vercel.app/bfhl](https://srm-challenge-app.vercel.app/bfhl)
+**Frontend URL**: [https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app](https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app)
+**Backend API Base URL**: [https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app](https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app)
+**Endpoint Evaluator Tests**: [https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app/bfhl](https://bajaj-git-main-akshuriipad10-5846s-projects.vercel.app/bfhl)
 
 ### Why Same URL Works
 By using Next.js App Router, the application acts as a true full-stack monolith.
