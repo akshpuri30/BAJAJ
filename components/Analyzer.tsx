@@ -30,7 +30,7 @@ export default function Analyzer() {
       const response = await fetch('/api/bfhl', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: parsedData })
+        body: JSON.stringify({ inputArr: parsedData })
       });
       
       if (!response.ok) {
@@ -53,10 +53,10 @@ export default function Analyzer() {
   return (
     <section id="analyzer" className="py-24 relative">
       <div className="mb-12">
-        <h2 className="text-3xl font-extrabold tracking-tight mb-3 flex items-center gap-3">
+        <h2 className="text-3xl font-extrabold tracking-tight mb-3 flex items-center gap-3 text-white">
           Hierarchy Analyzer
         </h2>
-        <p className="text-gray-500 text-sm max-w-2xl">
+        <p className="text-gray-400 text-sm max-w-2xl">
           Process large-scale node relationships in milliseconds. Input your directed edges below to map dependencies and identify cyclic structures.
         </p>
       </div>
@@ -72,24 +72,24 @@ export default function Analyzer() {
         >
           <div className="neo-container flex flex-col overflow-hidden">
             {/* Editor Header */}
-            <div className="h-12 bg-gray-50 border-b border-secondary px-4 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-gray-500 text-xs font-mono">
+            <div className="h-12 bg-white/5 border-b border-white/10 px-4 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-gray-400 text-xs font-mono">
                 <Code2 className="w-4 h-4" />
                 <span>input.txt</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-300" />
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-300" />
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-300" />
+              <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity">
+                <div className="w-3 h-3 rounded-full bg-danger/80" />
+                <div className="w-3 h-3 rounded-full bg-warning/80" />
+                <div className="w-3 h-3 rounded-full bg-success/80" />
               </div>
             </div>
 
             {/* Editor Body */}
-            <div className="relative flex bg-white min-h-[320px]">
+            <div className="relative flex bg-[#0a0a0a] min-h-[320px] shadow-inner">
               {/* Line Numbers */}
-              <div className="w-12 flex-shrink-0 bg-gray-50 border-r border-secondary py-4 flex flex-col items-end pr-3 select-none">
+              <div className="w-12 flex-shrink-0 bg-white/[0.02] border-r border-white/10 py-4 flex flex-col items-end pr-3 select-none">
                 {lines.map(n => (
-                  <span key={n} className="text-xs text-gray-400 font-mono leading-6">{n}</span>
+                  <span key={n} className="text-xs text-gray-600 font-mono leading-6">{n}</span>
                 ))}
               </div>
               
@@ -97,14 +97,14 @@ export default function Analyzer() {
                 ref={textareaRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="w-full flex-grow bg-transparent p-4 text-primary font-mono text-sm leading-6 focus:outline-none resize-none caret-accent"
+                className="w-full flex-grow bg-transparent p-4 text-white font-mono text-sm leading-6 focus:outline-none focus:ring-1 focus:ring-accent/50 focus:bg-accent/[0.02] resize-none caret-accent transition-all duration-300"
                 spellCheck={false}
                 placeholder={`A->B\nA->C\nB->D`}
               />
             </div>
 
             {/* Editor Footer / Actions */}
-            <div className="p-4 bg-gray-50 border-t border-secondary">
+            <div className="p-4 bg-white/5 border-t border-white/10">
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={handleAnalyze}
@@ -158,16 +158,16 @@ export default function Analyzer() {
           {result ? (
             <Results data={result} />
           ) : (
-            <div className="h-full w-full rounded-2xl border border-secondary border-dashed flex flex-col items-center justify-center text-gray-400 bg-surface min-h-[500px]">
+            <div className="h-full w-full rounded-2xl border border-white/10 border-dashed flex flex-col items-center justify-center text-gray-500 glass min-h-[500px]">
               <div className="relative w-16 h-16 mb-6">
-                <div className="absolute inset-0 border-2 border-gray-200 rounded-full animate-[spin_4s_linear_infinite]" />
-                <div className="absolute inset-2 border-2 border-accent/20 rounded-full animate-[spin_3s_linear_infinite_reverse]" />
+                <div className="absolute inset-0 border-2 border-white/10 rounded-full animate-[spin_4s_linear_infinite]" />
+                <div className="absolute inset-2 border-2 border-accent/50 rounded-full animate-[spin_3s_linear_infinite_reverse] shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-gray-300 rounded-full" />
+                  <div className="w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(59,130,246,1)] animate-pulse" />
                 </div>
               </div>
               <p className="font-mono text-sm uppercase tracking-widest text-gray-400 font-bold">Awaiting Input</p>
-              <p className="text-xs mt-2 text-gray-400 max-w-xs text-center">Results, structural visualizations, and graph metrics will appear here.</p>
+              <p className="text-xs mt-2 text-gray-500 max-w-xs text-center">Results, structural visualizations, and graph metrics will appear here.</p>
             </div>
           )}
         </motion.div>

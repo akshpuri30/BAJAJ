@@ -16,7 +16,7 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
         {hasChildren ? (
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="w-5 h-5 flex items-center justify-center rounded bg-gray-100 hover:bg-gray-200 transition-colors text-gray-500 hover:text-primary"
+            className="w-5 h-5 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
           >
             <motion.div animate={{ rotate: isOpen ? 90 : 0 }}>
               <ChevronRight className="w-3 h-3" />
@@ -26,12 +26,12 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
           <div className="w-5 h-5" /> // spacer
         )}
         
-        <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border text-sm font-bold ${
+        <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border text-sm font-bold transition-all ${
           level === 0 
-            ? 'bg-primary text-white border-primary shadow-sm' 
+            ? 'bg-accent/20 text-accent border-accent/40 shadow-[0_0_10px_rgba(59,130,246,0.2)]' 
             : hasCycle && !hasChildren
-              ? 'bg-warning/10 border-warning/20 text-warning'
-              : 'bg-white border-secondary text-primary'
+              ? 'bg-warning/20 border-warning/40 text-warning shadow-[0_0_10px_rgba(245,158,11,0.2)]'
+              : 'bg-white/5 border-white/10 text-gray-200 hover:border-white/20'
         }`}>
           {node}
           {hasCycle && !hasChildren && (
@@ -46,7 +46,7 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="ml-2.5 pl-6 border-l border-secondary flex flex-col gap-1 my-1"
+            className="ml-2.5 pl-6 border-l border-white/10 flex flex-col gap-1 my-1"
           >
             {childrenKeys.map(child => (
               <TreeNode 
@@ -66,14 +66,14 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
 
 export default function TreeVisualizer({ group }: { group: HierarchyGroup }) {
   return (
-    <div className="bg-gray-50 rounded-xl border border-secondary p-4 relative overflow-hidden group">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-secondary/50">
+    <div className="bg-[#111111] rounded-xl border border-white/10 p-4 relative overflow-hidden group shadow-lg">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center border border-secondary">
-            <Layers className="w-4 h-4 text-primary" />
+          <div className="w-8 h-8 rounded-lg bg-white/5 shadow-inner flex items-center justify-center border border-white/10">
+            <Layers className="w-4 h-4 text-accent" />
           </div>
           <div>
-            <span className="text-sm font-bold text-gray-700">Root: <span className="text-primary font-mono ml-1">{group.root}</span></span>
+            <span className="text-sm font-bold text-gray-300">Root: <span className="text-accent font-mono ml-1">{group.root}</span></span>
             {group.depth !== undefined && (
               <span className="ml-3 text-xs text-gray-500 font-bold uppercase">Depth: {group.depth}</span>
             )}

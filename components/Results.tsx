@@ -41,20 +41,20 @@ export default function Results({ data }: { data: ApiResponse }) {
       <div className="grid grid-cols-2 gap-4">
         <motion.div variants={item} className="neo-container p-5 flex items-center justify-between group">
           <div>
-            <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Total Trees</p>
-            <p className="text-4xl font-extrabold text-primary">{data.stats.total_trees}</p>
+            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Total Trees</p>
+            <p className="text-4xl font-extrabold text-white">{data.stats.total_trees}</p>
           </div>
-          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform border border-secondary">
-            <Network className="text-primary w-5 h-5" />
+          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform border border-white/10 group-hover:border-accent/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <Network className="text-accent w-5 h-5" />
           </div>
         </motion.div>
 
         <motion.div variants={item} className="neo-container p-5 flex items-center justify-between group">
           <div>
-            <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Cycles Detected</p>
-            <p className="text-4xl font-extrabold text-primary">{data.stats.total_cycles}</p>
+            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Cycles Detected</p>
+            <p className="text-4xl font-extrabold text-white">{data.stats.total_cycles}</p>
           </div>
-          <div className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-secondary ${data.stats.total_cycles > 0 ? 'bg-warning/10' : 'bg-success/10'}`}>
+          <div className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border ${data.stats.total_cycles > 0 ? 'bg-warning/10 border-warning/30 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.3)]' : 'bg-success/10 border-success/30 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]'}`}>
             <Activity className={`w-5 h-5 ${data.stats.total_cycles > 0 ? 'text-warning' : 'text-success'}`} />
           </div>
         </motion.div>
@@ -62,10 +62,10 @@ export default function Results({ data }: { data: ApiResponse }) {
         {data.stats.largest_tree_root && (
           <motion.div variants={item} className="neo-container p-5 col-span-2 sm:col-span-1 flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Deepest Root</p>
+              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Deepest Root</p>
               <div className="flex items-center gap-2">
-                <p className="text-3xl font-extrabold text-primary">{data.stats.largest_tree_root}</p>
-                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-accent/10 text-accent border border-accent/20">Winner</span>
+                <p className="text-3xl font-extrabold text-white">{data.stats.largest_tree_root}</p>
+                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-accent/20 text-accent border border-accent/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]">Winner</span>
               </div>
             </div>
           </motion.div>
@@ -119,15 +119,15 @@ export default function Results({ data }: { data: ApiResponse }) {
       </AnimatePresence>
 
       {/* Visual Hierarchy Explorer */}
-      <motion.div variants={item} className="neo-container overflow-hidden flex flex-col">
-        <div className="px-5 py-4 border-b border-secondary bg-gray-50 flex items-center justify-between">
-          <h3 className="font-bold text-sm flex items-center gap-2">
-            <Network className="w-4 h-4 text-primary" />
+      <motion.div variants={item} className="neo-container overflow-hidden flex flex-col border-white/10">
+        <div className="px-5 py-4 border-b border-white/10 bg-white/5 flex items-center justify-between backdrop-blur-md">
+          <h3 className="font-bold text-sm flex items-center gap-2 text-white">
+            <Network className="w-4 h-4 text-accent" />
             Hierarchy Visualizer
           </h3>
-          <span className="text-xs font-bold text-gray-500">{data.trees.length} structures</span>
+          <span className="text-xs font-bold text-gray-400">{data.trees.length} structures</span>
         </div>
-        <div className="p-5 bg-white">
+        <div className="p-5 bg-[#0a0a0a]">
           {data.trees.length > 0 ? (
             <div className="flex flex-col gap-6">
               {data.trees.map((group, idx) => (
@@ -135,7 +135,7 @@ export default function Results({ data }: { data: ApiResponse }) {
               ))}
             </div>
           ) : (
-            <div className="text-center py-8 text-gray-400 font-medium text-sm">
+            <div className="text-center py-8 text-gray-500 font-medium text-sm">
               No valid hierarchies found in the input.
             </div>
           )}
@@ -143,10 +143,10 @@ export default function Results({ data }: { data: ApiResponse }) {
       </motion.div>
 
       {/* Expandable Raw JSON */}
-      <motion.div variants={item} className="neo-container overflow-hidden">
+      <motion.div variants={item} className="neo-container overflow-hidden border-white/10">
         <button 
           onClick={() => setShowRaw(!showRaw)}
-          className="w-full px-5 py-4 bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-between text-sm font-bold text-primary"
+          className="w-full px-5 py-4 bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between text-sm font-bold text-white backdrop-blur-md"
         >
           <span className="flex items-center gap-2">
             <Code2 className="w-4 h-4 text-gray-400" />
@@ -161,9 +161,9 @@ export default function Results({ data }: { data: ApiResponse }) {
               initial={{ height: 0 }}
               animate={{ height: "auto" }}
               exit={{ height: 0 }}
-              className="overflow-hidden border-t border-secondary"
+              className="overflow-hidden border-t border-white/10"
             >
-              <div className="relative bg-primary">
+              <div className="relative bg-[#050505]">
                 <button
                   onClick={copyJson}
                   className="absolute top-4 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors z-10"

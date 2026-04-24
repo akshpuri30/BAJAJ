@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-24 border-b border-secondary/30">
+    <section className="relative pt-32 pb-24 border-b border-white/5">
       <div className="max-w-4xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -13,19 +13,19 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          <div className="inline-flex items-center gap-3 mb-10">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 font-bold">Sub-3 Second Engine</span>
+          <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full glass">
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-gray-300 font-bold">Sub-3 Second Engine</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-primary">
+          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
             Decode.<br/>
             Detect.<br/>
-            <span className="text-gray-300">Visualize.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Visualize.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mb-12 leading-relaxed font-light">
-            A brutalist, beautifully engineered engine for the SRM Full Stack Challenge. 
+          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-light">
+            A minimalist, beautifully engineered engine for the SRM Full Stack Challenge. 
             Instantly map dependencies and identify cyclic structures with mathematical precision.
           </p>
           
@@ -43,8 +43,8 @@ export default function Hero() {
       </div>
 
       {/* Minimalist Grid Decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full hidden lg:flex items-center justify-center opacity-30 pointer-events-none">
-        <svg width="400" height="400" viewBox="0 0 400 400" className="stroke-gray-300" style={{ strokeWidth: 1 }}>
+      <div className="absolute top-0 right-0 w-1/3 h-full hidden lg:flex items-center justify-center opacity-40 pointer-events-none mix-blend-screen">
+        <svg width="400" height="400" viewBox="0 0 400 400" className="stroke-white/10" style={{ strokeWidth: 1 }}>
           <motion.g
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -58,9 +58,9 @@ export default function Hero() {
               <line key={`v-${i}`} x1={i * 40} y1="0" x2={i * 40} y2="400" strokeDasharray="4 4" />
             ))}
             {/* Architectural Nodes */}
-            <circle cx="120" cy="120" r="4" className="fill-accent stroke-none" />
-            <circle cx="280" cy="200" r="4" className="fill-primary stroke-none" />
-            <circle cx="160" cy="320" r="4" className="fill-primary stroke-none" />
+            <circle cx="120" cy="120" r="4" className="fill-accent stroke-none animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.8))' }} />
+            <circle cx="280" cy="200" r="4" className="fill-white stroke-none" />
+            <circle cx="160" cy="320" r="4" className="fill-white stroke-none" />
             
             {/* Architectural Connections */}
             <motion.path 
