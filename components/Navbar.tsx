@@ -9,13 +9,13 @@ export default function Navbar() {
         <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.3)] flex items-center justify-center">
           <Network className="w-4 h-4 text-blue-500" />
         </div>
-        <div className="font-bold tracking-tight text-lg text-red-500">
+        <Link href="/" className="font-bold tracking-tight text-lg text-red-500 hover:opacity-80 transition-opacity">
           SRM <span className="font-light text-blue-400">Analyzer</span>
-        </div>
+        </Link>
       </div>
       
       <div className="flex items-center gap-6 text-sm font-medium">
-        <Link href="https://github.com/lya2004/BAJAJ.git" target="_blank" className="text-gray-500 hover:text-primary transition-colors">
+        <Link href="https://github.com/akshpuri30/BAJAJ.git" target="_blank" className="text-red-500 hover:text-blue-500 transition-colors">
           GitHub
         </Link>
         <Link href="#analyzer" className="neo-button-primary px-4 py-2">
