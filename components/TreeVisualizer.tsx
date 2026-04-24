@@ -28,9 +28,9 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
         
         <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border text-sm font-bold transition-all ${
           level === 0 
-            ? 'bg-accent/20 text-accent border-accent/40 shadow-[0_0_10px_rgba(239,68,68,0.2)]' 
+            ? 'bg-white/10 text-white border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.08)]' 
             : hasCycle && !hasChildren
-              ? 'bg-warning/20 border-warning/40 text-warning shadow-[0_0_10px_rgba(245,158,11,0.2)]'
+              ? 'bg-white/10 border-white/20 text-gray-400 shadow-[0_0_10px_rgba(255,255,255,0.05)]'
               : 'bg-white/5 border-white/10 text-gray-200 hover:border-white/20'
         }`}>
           {node}
@@ -70,10 +70,10 @@ export default function TreeVisualizer({ group }: { group: HierarchyGroup }) {
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-white/5 shadow-inner flex items-center justify-center border border-white/10">
-            <Layers className="w-4 h-4 text-accent" />
+            <Layers className="w-4 h-4 text-gray-400" />
           </div>
           <div>
-            <span className="text-sm font-bold text-gray-300">Root: <span className="text-accent font-mono ml-1">{group.root}</span></span>
+            <span className="text-sm font-bold text-gray-300">Root: <span className="text-white font-mono ml-1">{group.root}</span></span>
             {group.depth !== undefined && (
               <span className="ml-3 text-xs text-gray-500 font-bold uppercase">Depth: {group.depth}</span>
             )}

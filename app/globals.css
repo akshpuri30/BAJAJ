@@ -29,7 +29,7 @@
   }
 
   .neo-button-primary {
-    @apply neo-button bg-accent text-white hover:bg-accent/90 shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)];
+    @apply neo-button bg-white/10 text-white border border-white/20 hover:bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.1)];
   }
 
   .neo-button-secondary {

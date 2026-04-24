@@ -17,10 +17,10 @@ const config: Config = {
         surface: "#111111", // Dark gray surface
         primary: "#FFFFFF", // White text
         secondary: "#262626", // Dark border
-        accent: "#ef4444", // Vivid red
-        success: "#10b981",
-        warning: "#f59e0b",
-        danger: "#ef4444",
+        accent: "#a0a0a0", // Silver grey
+        success: "#6b7280",
+        warning: "#9ca3af",
+        danger: "#737373",
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
@@ -38,8 +38,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(239, 68, 68, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.6)' },
+          '0%': { boxShadow: '0 0 5px rgba(255, 255, 255, 0.05)' },
+          '100%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.15)' },
         }
       }
     },
