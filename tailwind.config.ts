@@ -13,14 +13,14 @@ const config: Config = {
         mono: ['var(--font-space)', 'monospace'],
       },
       colors: {
-        background: "#050505", // Pitch black
-        surface: "#111111", // Dark gray surface
-        primary: "#FFFFFF", // White text
-        secondary: "#262626", // Dark border
-        accent: "#a0a0a0", // Silver grey
-        success: "#6b7280",
-        warning: "#9ca3af",
-        danger: "#737373",
+        background: "#000000", // Pitch black
+        surface: "#050505", 
+        primary: "#ef4444", // Red
+        secondary: "#3b82f6", // Blue
+        accent: "#ef4444", // Red
+        success: "#10b981",
+        warning: "#f59e0b",
+        danger: "#ef4444",
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',

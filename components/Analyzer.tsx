@@ -53,10 +53,10 @@ export default function Analyzer() {
   return (
     <section id="analyzer" className="py-24 relative">
       <div className="mb-12">
-        <h2 className="text-3xl font-extrabold tracking-tight mb-3 flex items-center gap-3 text-white">
+        <h2 className="text-3xl font-extrabold tracking-tight mb-3 flex items-center gap-3 text-red-500">
           Hierarchy Analyzer
         </h2>
-        <p className="text-gray-400 text-sm max-w-2xl">
+        <p className="text-blue-400 text-sm max-w-2xl">
           Process large-scale node relationships in milliseconds. Input your directed edges below to map dependencies and identify cyclic structures.
         </p>
       </div>
@@ -87,9 +87,9 @@ export default function Analyzer() {
             {/* Editor Body */}
             <div className="relative flex bg-[#0a0a0a] min-h-[320px] shadow-inner">
               {/* Line Numbers */}
-              <div className="w-12 flex-shrink-0 bg-white/[0.02] border-r border-white/10 py-4 flex flex-col items-end pr-3 select-none">
+              <div className="w-12 flex-shrink-0 bg-white/[0.02] border-r border-blue-500/20 py-4 flex flex-col items-end pr-3 select-none">
                 {lines.map(n => (
-                  <span key={n} className="text-xs text-gray-600 font-mono leading-6">{n}</span>
+                  <span key={n} className="text-xs text-blue-500/50 font-mono leading-6">{n}</span>
                 ))}
               </div>
               
@@ -97,7 +97,7 @@ export default function Analyzer() {
                 ref={textareaRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="w-full flex-grow bg-transparent p-4 text-white font-mono text-sm leading-6 focus:outline-none focus:ring-1 focus:ring-accent/50 focus:bg-accent/[0.02] resize-none caret-accent transition-all duration-300"
+                className="w-full flex-grow bg-transparent p-4 text-red-500 font-mono text-sm leading-6 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-500/[0.02] resize-none caret-blue-500 transition-all duration-300"
                 spellCheck={false}
                 placeholder={`A->B\nA->C\nB->D`}
               />
@@ -158,16 +158,16 @@ export default function Analyzer() {
           {result ? (
             <Results data={result} />
           ) : (
-            <div className="h-full w-full rounded-2xl border border-white/10 border-dashed flex flex-col items-center justify-center text-gray-500 glass min-h-[500px]">
+            <div className="h-full w-full rounded-2xl border border-blue-500/20 border-dashed flex flex-col items-center justify-center text-blue-500 glass min-h-[500px]">
               <div className="relative w-16 h-16 mb-6">
-                <div className="absolute inset-0 border-2 border-white/10 rounded-full animate-[spin_4s_linear_infinite]" />
-                <div className="absolute inset-2 border-2 border-white/20 rounded-full animate-[spin_3s_linear_infinite_reverse] shadow-[0_0_15px_rgba(255,255,255,0.08)]" />
+                <div className="absolute inset-0 border-2 border-red-500/20 rounded-full animate-[spin_4s_linear_infinite]" />
+                <div className="absolute inset-2 border-2 border-blue-500/50 rounded-full animate-[spin_3s_linear_infinite_reverse] shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white/50 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.3)] animate-pulse" />
+                  <div className="w-2 h-2 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,1)] animate-pulse" />
                 </div>
               </div>
-              <p className="font-mono text-sm uppercase tracking-widest text-gray-400 font-bold">Awaiting Input</p>
-              <p className="text-xs mt-2 text-gray-500 max-w-xs text-center">Results, structural visualizations, and graph metrics will appear here.</p>
+              <p className="font-mono text-sm uppercase tracking-widest text-red-500 font-bold">Awaiting Input</p>
+              <p className="text-xs mt-2 text-blue-400 max-w-xs text-center">Results, structural visualizations, and graph metrics will appear here.</p>
             </div>
           )}
         </motion.div>

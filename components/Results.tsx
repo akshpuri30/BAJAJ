@@ -41,31 +41,31 @@ export default function Results({ data }: { data: ApiResponse }) {
       <div className="grid grid-cols-2 gap-4">
         <motion.div variants={item} className="neo-container p-5 flex items-center justify-between group">
           <div>
-            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Total Trees</p>
-            <p className="text-4xl font-extrabold text-white">{data.stats.total_trees}</p>
+            <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">Total Trees</p>
+            <p className="text-4xl font-extrabold text-red-500">{data.stats.total_trees}</p>
           </div>
-          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform border border-white/10 group-hover:border-white/30 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]">
-            <Network className="text-gray-400 w-5 h-5" />
+          <div className="w-12 h-12 rounded-full bg-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform border border-blue-500/10 group-hover:border-blue-500/30 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <Network className="text-blue-400 w-5 h-5" />
           </div>
         </motion.div>
 
         <motion.div variants={item} className="neo-container p-5 flex items-center justify-between group">
           <div>
-            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Cycles Detected</p>
-            <p className="text-4xl font-extrabold text-white">{data.stats.total_cycles}</p>
+            <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">Cycles Detected</p>
+            <p className="text-4xl font-extrabold text-red-500">{data.stats.total_cycles}</p>
           </div>
-          <div className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border ${data.stats.total_cycles > 0 ? 'bg-white/10 border-white/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]' : 'bg-white/5 border-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]'}`}>
-            <Activity className={`w-5 h-5 ${data.stats.total_cycles > 0 ? 'text-gray-300' : 'text-gray-400'}`} />
+          <div className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border ${data.stats.total_cycles > 0 ? 'bg-red-500/10 border-red-500/20 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]' : 'bg-blue-500/5 border-blue-500/10 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]'}`}>
+            <Activity className={`w-5 h-5 ${data.stats.total_cycles > 0 ? 'text-red-500' : 'text-blue-400'}`} />
           </div>
         </motion.div>
 
         {data.stats.largest_tree_root && (
           <motion.div variants={item} className="neo-container p-5 col-span-2 sm:col-span-1 flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">Deepest Root</p>
+              <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">Deepest Root</p>
               <div className="flex items-center gap-2">
-                <p className="text-3xl font-extrabold text-white">{data.stats.largest_tree_root}</p>
-                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-white/10 text-gray-300 border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.05)]">Winner</span>
+                <p className="text-3xl font-extrabold text-red-500">{data.stats.largest_tree_root}</p>
+                <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-[0_0_10px_rgba(59,130,246,0.2)]">Winner</span>
               </div>
             </div>
           </motion.div>
@@ -119,13 +119,13 @@ export default function Results({ data }: { data: ApiResponse }) {
       </AnimatePresence>
 
       {/* Visual Hierarchy Explorer */}
-      <motion.div variants={item} className="neo-container overflow-hidden flex flex-col border-white/10">
-        <div className="px-5 py-4 border-b border-white/10 bg-white/5 flex items-center justify-between backdrop-blur-md">
-          <h3 className="font-bold text-sm flex items-center gap-2 text-white">
-            <Network className="w-4 h-4 text-gray-400" />
+      <motion.div variants={item} className="neo-container overflow-hidden flex flex-col border-blue-500/20">
+        <div className="px-5 py-4 border-b border-blue-500/20 bg-blue-500/5 flex items-center justify-between backdrop-blur-md">
+          <h3 className="font-bold text-sm flex items-center gap-2 text-red-500">
+            <Network className="w-4 h-4 text-blue-500" />
             Hierarchy Visualizer
           </h3>
-          <span className="text-xs font-bold text-gray-400">{data.trees.length} structures</span>
+          <span className="text-xs font-bold text-blue-400">{data.trees.length} structures</span>
         </div>
         <div className="p-5 bg-[#0a0a0a]">
           {data.trees.length > 0 ? (

@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: #050505;
-    --foreground: #FFFFFF;
+    --background: #000000;
+    --foreground: #ef4444; /* Red */
   }
   
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply antialiased selection:bg-accent/30 selection:text-white;
+    @apply antialiased selection:bg-blue-500/30 selection:text-white;
   }
 }
 

@@ -13,18 +13,18 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full glass">
-            <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-300 font-bold">Sub-3 Second Engine</span>
+          <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-500/5">
+            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Sub-3 Second Engine</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
+          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-red-500">
             Decode.<br/>
             Detect.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600">Visualize.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">Visualize.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-blue-500/80 max-w-2xl mb-12 leading-relaxed font-light">
             A minimalist, beautifully engineered engine for the SRM Full Stack Challenge. 
             Instantly map dependencies and identify cyclic structures with mathematical precision.
           </p>
@@ -58,9 +58,9 @@ export default function Hero() {
               <line key={`v-${i}`} x1={i * 40} y1="0" x2={i * 40} y2="400" strokeDasharray="4 4" />
             ))}
             {/* Architectural Nodes */}
-            <circle cx="120" cy="120" r="4" className="fill-white/60 stroke-none animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.4))' }} />
-            <circle cx="280" cy="200" r="4" className="fill-white stroke-none" />
-            <circle cx="160" cy="320" r="4" className="fill-white stroke-none" />
+            <circle cx="120" cy="120" r="4" className="fill-red-500 stroke-none animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(239,68,68,0.8))' }} />
+            <circle cx="280" cy="200" r="4" className="fill-blue-500 stroke-none" style={{ filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.8))' }} />
+            <circle cx="160" cy="320" r="4" className="fill-blue-500 stroke-none" />
             
             {/* Architectural Connections */}
             <motion.path 

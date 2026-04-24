@@ -28,10 +28,10 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
         
         <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border text-sm font-bold transition-all ${
           level === 0 
-            ? 'bg-white/10 text-white border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.08)]' 
+            ? 'bg-red-500/10 text-red-500 border-red-500/30 shadow-[0_0_10px_rgba(239,68,68,0.2)]' 
             : hasCycle && !hasChildren
-              ? 'bg-white/10 border-white/20 text-gray-400 shadow-[0_0_10px_rgba(255,255,255,0.05)]'
-              : 'bg-white/5 border-white/10 text-gray-200 hover:border-white/20'
+              ? 'bg-red-500/10 border-red-500/20 text-red-500 shadow-[0_0_10px_rgba(239,68,68,0.2)]'
+              : 'bg-blue-500/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40'
         }`}>
           {node}
           {hasCycle && !hasChildren && (
@@ -66,16 +66,16 @@ const TreeNode = ({ node, childrenObj, level = 0, hasCycle = false }: { node: st
 
 export default function TreeVisualizer({ group }: { group: HierarchyGroup }) {
   return (
-    <div className="bg-[#111111] rounded-xl border border-white/10 p-4 relative overflow-hidden group shadow-lg">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+    <div className="bg-[#050505] rounded-xl border border-blue-500/20 p-4 relative overflow-hidden group shadow-lg">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-blue-500/10">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-white/5 shadow-inner flex items-center justify-center border border-white/10">
-            <Layers className="w-4 h-4 text-gray-400" />
+          <div className="w-8 h-8 rounded-lg bg-blue-500/10 shadow-inner flex items-center justify-center border border-blue-500/20">
+            <Layers className="w-4 h-4 text-blue-500" />
           </div>
           <div>
-            <span className="text-sm font-bold text-gray-300">Root: <span className="text-white font-mono ml-1">{group.root}</span></span>
+            <span className="text-sm font-bold text-blue-400">Root: <span className="text-red-500 font-mono ml-1">{group.root}</span></span>
             {group.depth !== undefined && (
-              <span className="ml-3 text-xs text-gray-500 font-bold uppercase">Depth: {group.depth}</span>
+              <span className="ml-3 text-xs text-blue-500/50 font-bold uppercase">Depth: {group.depth}</span>
             )}
           </div>
         </div>
